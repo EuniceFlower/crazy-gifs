@@ -5,18 +5,7 @@ import { Gif } from '../../interfaces/gifs.interfaces';
   selector: 'app-gifs-list',
   template: `
   <section class="row">
-    <div *ngFor="let item of gifList" class="col-md-3 col-sm-6">
-      <div class="card mb-2 text-center bg-black">
-        <!-- Crear imagen de gif -->
-         <img [src]="item.images.downsized_medium.url" [alt]="item.title">
-
-        <div class="card-body text-white">
-          <p class="card-text">
-            {{item.title}}
-          </p>
-        </div>
-      </div>
-    </div>
+    <app-gifs-card class="col-md-3 col-sm-6" *ngFor="let item of gifList" [gif]='item'></app-gifs-card>
   </section>
   `,
   styleUrl: './gifs-list.component.css'
