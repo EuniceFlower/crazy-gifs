@@ -5,6 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:github": "npm run delete:docs && npm run build && npm run build:href && npm run copy:browser",
+    "build:href": "ng build --base-href ./",
+    "delete:docs": "rmdir /s /q docs || echo 'Carpeta no encontrada, continuar...'",
+    "copy:browser": "xcopy /I dist\\crazy-gifs\\browser\\* docs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
